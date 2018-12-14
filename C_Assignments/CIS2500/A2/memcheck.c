@@ -214,12 +214,8 @@ void print_list( struct linked_list *list_Ptr )
 
 /*
 ***********************************************************************************
-*    The two functions searchlst and deleteNode I have created                    *
-*    because I could not understand the usage of the double pointer described     *
-*    in day 4 of the online disscussions.                                         *
-*                               
+                               UNUSED FUNCTIONs
 ***********************************************************************************
-
 struct linked_list *searchlst(void *val, struct linked_list **prev)
 
 *    Search through the linked list for val.
