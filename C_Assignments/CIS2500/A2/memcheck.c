@@ -141,12 +141,8 @@ void memcheck_free( void *ptr, char *file, int line )
         }               
   
     }
-  
     printf("memcheck error:  attempting to free memory address %p in file \"%s\", line %d.\n", (void *)ptr, file, line); 
 }
-
-
-void *memcheck_realloc( void *ptr, size_t size, char *file, int line )
 
 /* 
 *    Go through the list find the matching memory location, realloc the ptr member, set the file and line values to the newly substituded ones.
@@ -156,7 +152,7 @@ void *memcheck_realloc( void *ptr, size_t size, char *file, int line )
 /*
 *    Free the corresponding node to the ptr, then return the new malloc.
 */
-
+void *memcheck_realloc( void *ptr, size_t size, char *file, int line )
 {
 
     void *ret;
@@ -167,41 +163,13 @@ void *memcheck_realloc( void *ptr, size_t size, char *file, int line )
 
     return ret;    
 
-
-    /*    
-    struct linked_list *search;
-    void *temp;
-
-    search = list_ptr;
-
-    while(search)
-    {
-        if(search->ptr == ptr)
-        {
-
-            search->ptr = realloc(search->ptr, size);
-            search->file = file;
-            search->line = line;
-            temp = search->ptr;          
-          
-        }
-
-        search = search->next;
-
-    }
-
-    return temp;
-
-    */
 }
 
-
-void print_list( struct linked_list *list_Ptr )
 
 /*
 *   Print out each memory address that is in the list. 
 */
-
+void print_list( struct linked_list *list_Ptr )
 {
     while(list_Ptr)
     {
